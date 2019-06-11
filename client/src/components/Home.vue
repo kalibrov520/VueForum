@@ -10,7 +10,7 @@ import sourceData from "../data";
 import ThreadList from './ThreadList';
 console.log(sourceData);
 export default {
-  name: "HelloWorld",
+  name: "Home",
 
   components: {
     ThreadList
