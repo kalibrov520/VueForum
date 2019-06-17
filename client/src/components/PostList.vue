@@ -8,18 +8,18 @@
   </div>
 </template>
 
-<script>
-import PostListItem from './PostListItem'
-export default {
-  components: {
-    PostListItem
-  },
-
-  props: {
-    post: {
-      required: true,
-      type: Array
+ <script>
+    import PostListItem from './PostListItem'
+    export default {
+      components: {
+        PostListItem
+      },
+       props: {
+        posts: {
+          required: true,
+          type: Array
+        }
+      }
     }
-  }
-}
 </script>
+
