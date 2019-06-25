@@ -43,7 +43,6 @@
       posts () {
         const postIds = Object.values(this.thread.posts)
         return Object.values(sourceData.posts)
-          .filter(post => postIds.includes(post['.key']))
       }
     },
     methods: {
