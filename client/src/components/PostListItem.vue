@@ -16,14 +16,16 @@
       </div>
     </div>
 
-     <div class="post-date text-faded">
-      {{post.publishedAt}}
+     <div class="post-date text-faded"
+     :title="post.publishedAt | diffFromNow">
+      {{post.publishedAt | timeStampToDateTime}}
     </div>
   </div>
 </template>
 
 <script>
     import sourceData from '@/data'
+    import moment from 'moment'
     export default {
       props: {
         post: {
@@ -35,8 +37,18 @@
         user () {
           return sourceData.users[this.post.userId]
         },
-         userPostsCount () {
+        userPostsCount () {
           return Object.keys(this.user.posts).length
+        }
+      },
+
+      filters: {
+        timeStampToDateTime (date) {
+          return moment.unix(date).format('MMMM Do YYYY, h:mm:ss a')
+        },
+
+        diffFromNow (date) {
+          return moment.unix(date).fromNow()
         }
       }
     }
