@@ -18,6 +18,11 @@
 
 <script>
 export default {
+    props: {
+        threadId: {
+            required: true
+        }
+    },
     data () {
         return {
             newPostText: ''
@@ -30,7 +35,7 @@ export default {
         const post = {
           text: this.newPostText,
           publishedAt: Math.floor(Date.now() / 1000),
-          threadId: this.id,
+          threadId: this.threadId,
           userId: 'jUjmgCurRRdzayqbRMO7aTG9X1G2',
           '.key': postId
         }

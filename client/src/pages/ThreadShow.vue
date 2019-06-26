@@ -2,7 +2,8 @@
   <div class="col-large push-top">
     <h1>{{thread.title}}</h1>
     <PostList :posts="posts"/>
-    <PostEditor @save-post="addPost"/>
+    <PostEditor @save-post="addPost"
+    :threadId="id"/>
   </div>
 </template>
 
