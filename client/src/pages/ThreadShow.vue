@@ -39,6 +39,11 @@
     methods: {
       addPost (eventData) {
         console.log(eventData)
+        const post = eventData.post
+        const postId = eventData.post['.key']
+        this.$set(sourceData.posts, postId, post)
+        this.$set(this.thread.posts, postId, postId)
+        this.$set(sourceData.users[post.userId].posts, postId, postId)
       }
     }
   }
