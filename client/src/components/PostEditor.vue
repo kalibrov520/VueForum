@@ -36,8 +36,8 @@ export default {
         }
         /*this.$set(sourceData.posts, postId, post)
         this.$set(this.thread.posts, postId, postId)
-        this.$set(sourceData.users[post.userId].posts, postId, postId)
-        this.newPostText = ''*/
+        this.$set(sourceData.users[post.userId].posts, postId, postId)*/
+        this.newPostText = ''
 
         this.$emit('save-post', {post}) //так передается объект, если название перемнной и имени проперти совпадает, иначе {post: postName}
       }
