@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/Home'
 import ThreadShow from '@/pages/ThreadShow'
+import Category from '@/pages/Category'
 import Forum from '@/pages/Forum'
 import NotFound from '@/pages/NotFound'
 
@@ -18,6 +19,12 @@ export default new Router({
       path: '/forum/:id',
       name: 'Forum',
       component: Forum,
+      props: true
+    },
+    {
+      path: '/category/:id',
+      name: 'Category',
+      component: Category,
       props: true
     },
     {
