@@ -6,14 +6,19 @@
 </template>
 
 <script>
-import sourceData from "../data";
 import CategoryList from '@/components/CategoryList';
-console.log(sourceData);
+
 export default {
   name: "Home",
 
   components: {
     CategoryList
+  },
+
+  computed: {
+    categories () {
+      return Object.values(this.$store.state.categories)
+    }
   },
 
   data() {
