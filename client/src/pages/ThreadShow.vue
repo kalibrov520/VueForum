@@ -6,7 +6,7 @@
       <span style="float:right; margin-top: 2px;" class="hide-mobile text-faded text-small">3 replies by 3 contributors</span>
     </p>
     <PostList :posts="posts"/>
-    <PostEditor @save-post="addPost"
+    <PostEditor 
     :threadId="id"/>
   </div>
 </template>
@@ -37,17 +37,6 @@
         const postIds = Object.values(this.thread.posts)
         return Object.values(this.$store.state.posts)
           
-      }
-    },
-
-    methods: {
-      addPost (eventData) {
-        console.log(eventData)
-        const post = eventData.post
-        const postId = eventData.post['.key']
-        this.$set(this.$store.state.posts, postId, post)
-        this.$set(this.thread.posts, postId, postId)
-        this.$set(this.$store.state.users[post.userId].posts, postId, postId)
       }
     }
   }

@@ -31,13 +31,11 @@ export default {
 
     methods: {
       addPost () {
-        const postId = 'postNumber' + Math.random()
         const post = {
           text: this.newPostText,
           publishedAt: Math.floor(Date.now() / 1000),
           threadId: this.threadId,
-          userId: 'jUjmgCurRRdzayqbRMO7aTG9X1G2',
-          '.key': postId
+          userId: 'jUjmgCurRRdzayqbRMO7aTG9X1G2'
         }
         /*this.$set(sourceData.posts, postId, post)
         this.$set(this.thread.posts, postId, postId)
@@ -45,6 +43,7 @@ export default {
         this.newPostText = ''
 
         this.$emit('save-post', {post}) //так передается объект, если название перемнной и имени проперти совпадает, иначе {post: postName}
+        this.$store.dispatch('createPost', post)
       }
     }
 }
