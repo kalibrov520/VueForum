@@ -1,21 +1,21 @@
 <template>
   <header class="header" id="header">
 
-     <router-link
+    <router-link
       :to="{name: 'Home'}"
       class="logo"
     >
       <img src="../assets/img/logo.svg">
     </router-link>
 
-     <div class="btn-hamburger">
+    <div class="btn-hamburger">
       <!-- use .btn-humburger-active to open the menu -->
       <div class="top bar"></div>
       <div class="middle bar"></div>
       <div class="bottom bar"></div>
     </div>
 
-     <!-- use .navbar-open to open nav -->
+    <!-- use .navbar-open to open nav -->
     <nav class="navbar">
       <ul>
         <!--<li class="navbar-item">-->
@@ -38,16 +38,16 @@
           <!--<a href="#">Logout</a>-->
         <!--</li>-->
 
-         <li class="navbar-user">
-          <a href="#">
-            <img class="avatar-small" alt="">
+        <li class="navbar-user">
+          <router-link :to="{name: 'Profile'}">
+            <img class="avatar-small" :src="user.avatar" alt="">
             <span>
                 {{user.name}}
                 <img class="icon-profile" src="../assets/img/arrow.svg" alt="">
             </span>
-          </a>
+          </router-link>
 
-           <!-- dropdown menu -->
+          <!-- dropdown menu -->
           <!-- add class "active-drop" to show the dropdown -->
           <div id="user-dropdown">
             <div class="triangle-drop"></div>
@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+  import {mapGetters} from 'vuex'
   export default {
     computed: {
       ...mapGetters({
@@ -74,6 +74,4 @@ import {mapGetters} from 'vuex'
 </script>
 
 <style scoped>
-
 </style>
-
