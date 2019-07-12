@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import {objectCount} from '@/utils/utils'
     export default{
         
         props: {
@@ -33,7 +34,7 @@
 
         computed: {
           repliesCount() {
-            return Object.keys(this.thread.posts).length - 1;
+            return objectCount(this.thread.posts) - 1;
           },
 
           user() {
