@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import {objectCount} from '@/utils/utils'
+import {countObject} from '@/utils/utils'
     export default{
         
         props: {
