@@ -1,11 +1,13 @@
 <template>
   <div class="flex-grid">
-    <!--<UserProfileCard-->
-      <!--:user="user"-->
-      <!--:userPostsCount="userPostsCount"-->
-      <!--:userThreadsCount="userThreadsCount"-->
-    <!--/>-->
+    <UserProfileCard
+      v-if="!edit"
+      :user="user"
+      :userPostsCount="userPostsCount"
+      :userThreadsCount="userThreadsCount"
+    />
     <UserProfileCardEditor
+      v-else
       :user="user"
       :userPostsCount="userPostsCount"
       :userThreadsCount="userThreadsCount"
@@ -33,6 +35,13 @@
     import {mapGetters} from 'vuex'
     import {countObject} from '@/utils/utils'
     export default {
+      props: {
+        edit: {
+          type: Boolean,
+          deafult: false
+        }
+      },
+      
       components: {
         PostList,
         UserProfileCard,

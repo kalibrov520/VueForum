@@ -33,7 +33,12 @@
 
     <div class="text-center">
       <hr />
-      <a href="edit-profile.html" class="btn-green btn-small">Edit Profile</a>
+      <router-link
+        :to="UserProfileCardEditor"
+        class="btn-green btn-small"
+      >
+      EditProfile
+      </router-link>
     </div>
   </div>
 </template>
