@@ -33,9 +33,7 @@ export default {
       addPost () {
         const post = {
           text: this.newPostText,
-          publishedAt: Math.floor(Date.now() / 1000),
-          threadId: this.threadId,
-          userId: 'jUjmgCurRRdzayqbRMO7aTG9X1G2'
+          threadId: this.threadId
         }
         /*this.$set(sourceData.posts, postId, post)
         this.$set(this.thread.posts, postId, postId)
